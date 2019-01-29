@@ -1,0 +1,82 @@
+<Scene version="1" name="Menu"  type="MenuScene">
+    <Objects>
+		<Object type="TextObject">
+		    <Name>PlayButton</Name>
+			<Text>Play Snake</Text>
+			<X>42</X>
+			<Y>150</Y>
+        </Object>
+		<Object type="TextObject">
+		    <Name>SoundToggle</Name>
+			<Text>Toggle Sounds</Text>
+			<X>42</X>
+			<Y>175</Y>
+        </Object>
+		<Object type="TextObject">
+		    <Name>MusicToggle</Name>
+			<Text>Toggle Music</Text>
+			<X>42</X>
+			<Y>200</Y>
+        </Object>
+		<Object type="TextObject">
+		    <Name>ExitButton</Name>
+			<Text>Exit Game</Text>
+			<X>42</X>
+			<Y>225</Y>
+        </Object>
+		<Object type="TextObject">
+		    <Name>JoystickDetected</Name>
+			<Text>Placeholder text</Text>
+			<X>42</X>
+			<Y>400</Y>
+        </Object>
+		<Object type="TextObject">
+		    <Name>SnakeGameTitle</Name>
+			<Text>SDL Snake Game</Text>
+			<X>42</X>
+			<Y>50</Y>
+        </Object>
+			<Object type="TextObject">
+		    <Name>ControlSnakeUp</Name>
+			<Text>Snake Up:</Text>
+			<X>270</X>
+			<Y>175</Y>
+        </Object>
+		<Object type="TextObject">
+		    <Name>ControlSnakeDown</Name>
+			<Text>Snake Down:</Text>
+			<X>270</X>
+			<Y>200</Y>
+        </Object>
+		<Object type="TextObject">
+		    <Name>ControlSnakeLeft</Name>
+			<Text>Snake Left:</Text>
+			<X>270</X>
+			<Y>225</Y>
+        </Object>
+		<Object type="TextObject">
+		    <Name>ControlSnakeRight</Name>
+			<Text>Snake Right:</Text>
+			<X>270</X>
+			<Y>250</Y>
+        </Object>
+			<Object type="TextObject">
+		    <Name>MenuUp</Name>
+			<Text>Selection Up:</Text>
+			<X>270</X>
+			<Y>275</Y>
+        </Object>
+			<Object type="TextObject">
+		    <Name>MenuDown</Name>
+			<Text>Selection Down:</Text>
+			<X>270</X>
+			<Y>300</Y>
+        </Object>
+				<Object type="TextObject">
+		    <Name>MenuAccept</Name>
+			<Text>Selection Accept:</Text>
+			<X>270</X>
+			<Y>325</Y>
+        </Object>
+    </Objects>
+</Scene>

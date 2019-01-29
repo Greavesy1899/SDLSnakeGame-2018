@@ -1,0 +1,12 @@
+<Config version="1">
+    <Options>
+		<!-- uses decimal values from here: https://wiki.libsdl.org/SDLScancodeLookup -->
+        <SnakeMoveLeftKey>4</SnakeMoveLeftKey>
+		<SnakeMoveUpKey>26</SnakeMoveUpKey>
+		<SnakeMoveRightKey>7</SnakeMoveRightKey>
+		<SnakeMoveDownKey>22</SnakeMoveDownKey>
+		<PauseKey>19</PauseKey>
+		<MuteSounds>0</MuteSounds>
+		<MuteMusic>0</MuteMusic>
+    </Options>
+</Config>

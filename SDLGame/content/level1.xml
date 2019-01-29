@@ -1,0 +1,85 @@
+<Scene version="1" name="Level1Scene" type="GameScene">
+    <Objects>
+		<Object type="GameObject">
+			<Name>Background</Name>
+            <Sprite>content/background.png</Sprite>
+			<ColType>0</ColType>
+			<X>0</X>
+			<Y>0</Y>
+		</Object>	
+		<Object type="CollisionObject">
+			<Name>CollisionLeft</Name>
+			<ColType>2</ColType>
+			<X>0</X>
+			<Y>0</Y>
+			<H>480</H>
+			<W>32</W>
+		</Object>	
+		<Object type="CollisionObject">
+			<Name>CollisionRight</Name>
+			<ColType>2</ColType>
+			<X>608</X>
+			<Y>0</Y>
+			<H>480</H>
+			<W>32</W>
+		</Object>	
+		<Object type="CollisionObject">
+			<Name>CollisionTop</Name>
+			<ColType>2</ColType>
+			<X>0</X>
+			<Y>32</Y>
+			<H>32</H>
+			<W>640</W>
+		</Object>	
+		<Object type="CollisionObject">
+			<Name>CollisionBottom</Name>
+			<ColType>2</ColType>
+			<X>0</X>
+			<Y>464</Y>
+			<H>16</H>
+			<W>640</W>
+		</Object>
+		<Object type="TextObject">
+		    <Name>GameStateText</Name>
+			<Text>This is placeholder text</Text>
+			<X>275</X>
+			<Y>240</Y>
+        </Object>
+		
+		<Object type="ScenePopulater">
+			<Name>ScenePopulaterManager</Name>
+			<MinX>64</MinX>
+			<MinY>64</MinY>
+			<MaxX>576</MaxX>
+			<MaxY>416</MaxY>
+		</Object>		
+		
+		<!-- I'mma snaaaaake -->
+		<Object type="SnakeObject">
+		    <Name>SnakeHead</Name>
+            <Sprite>content/snake_head.png</Sprite>
+			<ColType>1</ColType>
+			<X>192</X>
+			<Y>192</Y>
+        </Object>
+		
+		<!-- The snake needs food! -->
+		<Object type="FoodControllerObject">
+		    <Name>FoodController</Name>
+        </Object>
+		
+		<Object type="ProgressBarObject">
+		    <Name>GameTimer</Name>
+			<Time>60</Time>
+			<Width>576</Width>
+			<X>32</X>
+			<Y>0</Y>
+        </Object>
+		<Object type="TextObject">
+		    <Name>GameScore</Name>
+			<Text>This is placeholder text</Text>
+			<X>42</X>
+			<Y>4</Y>
+        </Object>
+    </Objects>
+</Scene>
