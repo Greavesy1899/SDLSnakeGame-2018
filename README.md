@@ -10,3 +10,12 @@ This game was built for the module "Games Programming" whilst studying at the Un
 - Powerup system.
 - Variable FPS to modify game pace.
 - Discord Rich Presence.
+- Sprite Manager.
+
+### Potential Improvements
+- Audio/Sound Manager.
+- Event-Based System.
+- Remove Singletons.
+- Add more levels.
+- Improve menu class and menu handling.
+- Configuration settings for XBOX controllers.
