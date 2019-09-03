@@ -26,6 +26,8 @@ void InputManager::ClearKeyVector()
 
 int InputManager::CheckForKey(int ik) const
 {
+	//const Uint8* keystates = SDL_GetKeyboardState(NULL);
+	//return keystates[ik];
 	for (auto key : this->pressedKeys)
 	{
 		if (key == ik)

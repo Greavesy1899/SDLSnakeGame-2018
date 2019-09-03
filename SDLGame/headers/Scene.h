@@ -10,6 +10,7 @@
 #include "Vector.h"
 #include <include/SDL_ttf.h>
 #include <include/SDL_mixer.h>
+#include "AudioClip.h"
 
 class Scene {
 private:
@@ -17,7 +18,7 @@ private:
 	std::string name;
 	std::string type;
 	Vector sceneSize;
-	Mix_Chunk* gameOverSound;
+	AudioClip* gameOverSound;
 	bool playedGameOver;
 	void playingUpdate();
 	void pausedUpdate();

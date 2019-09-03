@@ -13,17 +13,13 @@ FoodControllerObject::FoodControllerObject()
 
 FoodControllerObject::~FoodControllerObject()
 {
-	Mix_FreeChunk(this->pickupAppleSound);
-	Mix_FreeChunk(this->pickupPowerupSound);
 	delete food;
 }
 
 void FoodControllerObject::Init(const std::string& name)
 {
-	this->pickupAppleSound = Mix_LoadWAV("content/FoodPickup.wav");
-	this->pickupPowerupSound = Mix_LoadWAV("content/PowerPickup.wav");
-	Mix_VolumeChunk(this->pickupAppleSound, 20);
-	Mix_VolumeChunk(this->pickupPowerupSound, 20);
+	this->pickupAppleSound = Singleton::getInstance()->GetAM()->LookupAudioClip("AUD_APPLE_PICKUP");
+	this->pickupPowerupSound = Singleton::getInstance()->GetAM()->LookupAudioClip("AUD_POWER_PICKUP");
 	std::string foodPath = "content/apple_sprite.png";
 	std::string ghostPath = "content/power_ghost.png";
 
@@ -83,14 +79,12 @@ void FoodControllerObject::EatenFood()
 	{
 	case 0:
 		Singleton::getInstance()->IncrementScore();
-		if(!Singleton::getInstance()->GetAM()->GetSoundMuted())
-			Mix_PlayChannel(1, this->pickupAppleSound, 0);
+			this->pickupAppleSound->Play();
 		break;
 	case 1:
 		Singleton::getInstance()->IncrementScore();
 		Singleton::getInstance()->SetHasEatenGhostFood(true);
-		if (!Singleton::getInstance()->GetAM()->GetSoundMuted())
-			Mix_PlayChannel(1, this->pickupPowerupSound, 0);
+		this->pickupPowerupSound->Play();
 		break;
 	default:
 		break;

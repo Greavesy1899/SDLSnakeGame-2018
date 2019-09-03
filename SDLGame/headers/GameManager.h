@@ -2,6 +2,7 @@
 #define GameManagerFile
 #include "include/SDL.h"
 #include "SceneManager.h"
+#include "AudioClip.h"
 #include "Menu.h"
 
 class GameManager {
@@ -10,7 +11,7 @@ private:
 	SceneManager* sceneManager;
 	SDL_Window* window;
 	int windowID;
-	Mix_Chunk* music;
+	AudioClip* music;
 	bool isMusicOn;
 	void HandleMusic();
 	void HandlePausing();

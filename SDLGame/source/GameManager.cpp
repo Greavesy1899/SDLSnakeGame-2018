@@ -8,14 +8,14 @@ void GameManager::HandleMusic()
 		if (!this->isMusicOn)
 		{
 			SDL_LogCritical(SDL_LOG_CATEGORY_AUDIO, "Music should have started playing!");
-			Mix_PlayChannel(0, this->music, -1);
+			this->music->Play();
 			this->isMusicOn = true;
 		}
-		Mix_VolumeChunk(this->music, 75);
+		this->music->SetVolume(100);
 	}
 	else
 	{
-		Mix_VolumeChunk(this->music, 0);
+		this->music->SetVolume(0);
 	}
 }
 
@@ -131,7 +131,7 @@ void GameManager::Init() {
 	sceneManager->SetCurrentScene(1);
 	Singleton::getInstance()->SetGameState(3);
 	Singleton::getInstance()->ResetScore();
-	this->music = Mix_LoadWAV("content/komiku.mp3");
+	this->music = Singleton::getInstance()->GetAM()->LookupAudioClip("MUS_MAIN01");
 	//finish init.
 	this->isRunning = true;
 	HandleMusic();

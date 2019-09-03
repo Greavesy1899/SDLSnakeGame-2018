@@ -1,5 +1,9 @@
 #ifndef AudioManagerFile
 #define AudioManagerFile
+
+#include "AudioClip.h"
+#include <vector>
+
 class AudioManager
 {
 private:
@@ -9,6 +13,10 @@ private:
 	int soundVolume;
 	int musicChannel = 0;
 	int soundChannel = 1;
+	std::vector<AudioClip*> clips;
+
+	void ParseAudioFile();
+
 public:
 	bool GetSoundMuted() const;
 	void SetSoundMuted(bool val);
@@ -20,6 +28,7 @@ public:
 	void SetSoundVolume(int val);
 	int GetMusicChannel() const;
 	int GetSoundChannel() const;
+	AudioClip* LookupAudioClip(std::string name);
 
 	//constructor/destructor
 	~AudioManager();

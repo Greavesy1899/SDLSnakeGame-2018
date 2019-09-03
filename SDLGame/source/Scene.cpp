@@ -162,8 +162,7 @@ int Scene::ReadSceneXML(const std::string& path)
 
 	}
 
-	this->gameOverSound = Mix_LoadWAV("content/GameOverSound.wav");
-	Mix_VolumeChunk(this->gameOverSound, 20);
+	this->gameOverSound = Singleton::getInstance()->GetAM()->LookupAudioClip("AUD_GAME_OVER");
 	font = TTF_OpenFont("content/VCR.ttf", 21);
 	smallFont = TTF_OpenFont("content/VCR.ttf", 17);
 
@@ -277,7 +276,7 @@ void Scene::gameOverUpdate()
 	}
 	if (!this->playedGameOver)
 	{
-		Mix_PlayChannel(1, this->gameOverSound, 0);
+		this->gameOverSound->Play();
 		this->playedGameOver = true;
 	}
 }

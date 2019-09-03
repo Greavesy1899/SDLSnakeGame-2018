@@ -17,9 +17,7 @@ void Menu::moveUp()
 	if (menuCurIdx > 0)
 	{
 		menuCurIdx--;
-
-		if (!Singleton::getInstance()->GetAM()->GetSoundMuted())
-			Mix_PlayChannel(1, this->menuUpSound, 0);
+		this->menuUpSound->Play();
 	}
 }
 
@@ -28,18 +26,14 @@ void Menu::moveDown()
 	if (menuCurIdx < 3)
 	{
 		menuCurIdx++;
-
-		if (!Singleton::getInstance()->GetAM()->GetSoundMuted())
-			Mix_PlayChannel(1, this->menuDownSound, 0);
+		this->menuDownSound->Play();
 	}
 }
 
 void Menu::select()
 {
 	this->menuPressedIdx = menuCurIdx;
-
-	if (!Singleton::getInstance()->GetAM()->GetSoundMuted())
-		Mix_PlayChannel(1, this->menuSelectSound, 0);
+	this->menuSelectSound->Play();
 }
 
 
@@ -230,16 +224,11 @@ void Menu::Update()
 
 Menu::Menu()
 {
-	this->menuDownSound = Mix_LoadWAV("Content/MenuMoveDown.wav");
-	this->menuUpSound = Mix_LoadWAV("Content/MenuMoveUp.wav");
-	this->menuSelectSound = Mix_LoadWAV("content/MenuSelect.wav");
-	Mix_VolumeChunk(menuDownSound, 20);
-	Mix_VolumeChunk(menuUpSound, 20);
-	Mix_VolumeChunk(menuSelectSound, 20);
+	this->menuDownSound = Singleton::getInstance()->GetAM()->LookupAudioClip("AUD_MENU_DOWN");
+	this->menuUpSound = Singleton::getInstance()->GetAM()->LookupAudioClip("AUD_MENU_UP");
+	this->menuSelectSound = Singleton::getInstance()->GetAM()->LookupAudioClip("AUD_MENU_SELECT");
 }
 
 Menu::~Menu()
 {
-	Mix_FreeChunk(this->menuDownSound);
-	Mix_FreeChunk(this->menuUpSound);
 }

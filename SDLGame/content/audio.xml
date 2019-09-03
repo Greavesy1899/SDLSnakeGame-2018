@@ -1,0 +1,11 @@
+<Audio version="1">
+    <AudioClips>
+        <AudioClip name="AUD_MENU_SELECT" volume="75" channel="1" loop="0">Content/Audio/MenuSelect.wav</AudioClip>
+		<AudioClip name="AUD_MENU_UP" volume="75" channel="1" loop="0">Content/Audio/MenuMoveDown.wav</AudioClip>
+		<AudioClip name="AUD_MENU_DOWN" volume="75" channel="1" loop="0">Content/Audio/MenuMoveUp.wav</AudioClip>
+		<AudioClip name="AUD_APPLE_PICKUP" volume="75" channel="1" loop="0">Content/Audio/FoodPickup.wav</AudioClip>
+		<AudioClip name="AUD_POWER_PICKUP" volume="75" channel="1" loop="0">Content/Audio/PowerPickup.wav</AudioClip>
+		<AudioClip name="AUD_GAME_OVER" volume="100" channel="1" loop="0">Content/Audio/GameOverSound.wav</AudioClip>
+		<AudioClip name="MUS_MAIN01" volume="100" channel="0" loop="1">content/Audio/komiku.mp3</AudioClip>
+    </AudioClips>
+</Audio>

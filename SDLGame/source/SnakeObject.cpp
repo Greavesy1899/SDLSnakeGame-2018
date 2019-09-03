@@ -79,15 +79,15 @@ void SnakeObject::Input()
 		this->direction = Vector::Up();
 		this->rotation = 0;
 	}
-	if (Singleton::getInstance()->GetIM()->CheckForKey(moveLeftKey) && (this->rotation != 90)) {
+	else if (Singleton::getInstance()->GetIM()->CheckForKey(moveLeftKey) && (this->rotation != 90)) {
 		this->direction = Vector::Left();
 		this->rotation = -90;
 	}
-	if (Singleton::getInstance()->GetIM()->CheckForKey(moveRightKey) && (this->rotation != -90)) {
+	else if (Singleton::getInstance()->GetIM()->CheckForKey(moveRightKey) && (this->rotation != -90)) {
 		this->direction = Vector::Right();
 		this->rotation = 90;
 	}
-	if (Singleton::getInstance()->GetIM()->CheckForKey(moveDownKey) && (this->rotation != 0)) {
+	else if (Singleton::getInstance()->GetIM()->CheckForKey(moveDownKey) && (this->rotation != 0)) {
 		this->direction = Vector::Down();
 		this->rotation = 180;
 	}

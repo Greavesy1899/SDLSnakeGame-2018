@@ -6,7 +6,7 @@
 		<SnakeMoveRightKey>7</SnakeMoveRightKey>
 		<SnakeMoveDownKey>22</SnakeMoveDownKey>
 		<PauseKey>19</PauseKey>
-		<MuteSounds>0</MuteSounds>
+		<MuteSounds>1</MuteSounds>
 		<MuteMusic>0</MuteMusic>
     </Options>
 </Config>

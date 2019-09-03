@@ -10,6 +10,7 @@
 
 #include "SZ_Timer.h"
 #include <include/SDL_mixer.h>
+#include "AudioClip.h"
 
 class Menu : public Scene {
 private:
@@ -21,9 +22,9 @@ private:
 	void moveUp();
 	void moveDown();
 	void select();
-	Mix_Chunk* menuUpSound;
-	Mix_Chunk* menuDownSound;
-	Mix_Chunk* menuSelectSound;
+	AudioClip* menuUpSound;
+	AudioClip* menuDownSound;
+	AudioClip* menuSelectSound;
 public:
 	std::string GetSceneType() const override;
 	void Input();

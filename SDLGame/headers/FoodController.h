@@ -4,6 +4,7 @@
 #include "headers/NewGameObject.h"
 #include <vector>
 #include <include/SDL_mixer.h>
+#include "AudioClip.h"
 
 class FoodControllerObject : public GameObject
 {
@@ -23,7 +24,7 @@ public:
 private:
 	std::string ObjectType = "FoodController";
 	int curType;
-	Mix_Chunk* pickupAppleSound;
-	Mix_Chunk* pickupPowerupSound;
+	AudioClip* pickupAppleSound;
+	AudioClip* pickupPowerupSound;
 };
 #endif
