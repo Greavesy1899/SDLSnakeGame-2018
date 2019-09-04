@@ -14,11 +14,11 @@ public:
 	SDL_Texture* GetTexture() const;
 	std::string GetName() const;
 	SDL_Point* GetCentrePoint() const;
-	int InitialiseData(std::string& path);
+	int InitialiseData(std::string path, std::string name);
 	int CreateTextureSprite(SDL_Renderer * renderer);
 
 	SpriteData();
-	SpriteData(std::string& path);
+	//SpriteData(std::string& path);
 	~SpriteData();
 };
 

@@ -22,27 +22,12 @@ SnakeObject::~SnakeObject() = default;
 void SnakeObject::Init(const std::string& name, SpriteData* spriteData, int colType, int x, int y)
 {
 	GameObject::Init(name, spriteData, colType, x, y);
-
-	std::string bodyPath = "content/snake_body.png";
-	std::string headPath = "content/snake_head.png";
-	std::string tailPath = "content/snake_tail.png";
-	std::string gBodyPath = "content/blue_snake_body.png";
-	std::string gHeadPath = "content/blue_snake_head.png";
-	std::string gTailPath = "content/blue_snake_tail.png";
-
-	this->headSprite = new SpriteData(headPath);
-	this->bodySprite = new SpriteData(bodyPath);
-	this->tailSprite = new SpriteData(tailPath);
-	this->ghostHeadSprite = new SpriteData(gHeadPath);
-	this->ghostBodySprite = new SpriteData(gBodyPath);
-	this->ghostTailSprite = new SpriteData(gTailPath);
-
-	Singleton::getInstance()->GetSpriteManager()->PushBack(headSprite);
-	Singleton::getInstance()->GetSpriteManager()->PushBack(bodySprite);
-	Singleton::getInstance()->GetSpriteManager()->PushBack(tailSprite);
-	Singleton::getInstance()->GetSpriteManager()->PushBack(ghostHeadSprite);
-	Singleton::getInstance()->GetSpriteManager()->PushBack(ghostBodySprite);
-	Singleton::getInstance()->GetSpriteManager()->PushBack(ghostTailSprite);
+	this->headSprite = Singleton::getInstance()->GetSpriteManager()->GetSpriteByName("SNAKE_HEAD");
+	this->bodySprite = Singleton::getInstance()->GetSpriteManager()->GetSpriteByName("SNAKE_BODY");
+	this->tailSprite = Singleton::getInstance()->GetSpriteManager()->GetSpriteByName("SNAKE_TAIL");
+	this->ghostHeadSprite = Singleton::getInstance()->GetSpriteManager()->GetSpriteByName("POWER_HEAD");
+	this->ghostBodySprite = Singleton::getInstance()->GetSpriteManager()->GetSpriteByName("POWER_BODY");
+	this->ghostTailSprite = Singleton::getInstance()->GetSpriteManager()->GetSpriteByName("POWER_TAIL");
 
 	auto* headPart = new GameObject();
 	headPart->Init("SnakeHead", headSprite, colType, x, y);

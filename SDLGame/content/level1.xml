@@ -2,7 +2,7 @@
     <Objects>
 		<Object type="GameObject">
 			<Name>Background</Name>
-            <Sprite>content/background.png</Sprite>
+            <Sprite>LEVEL1_BACKGROUND</Sprite>
 			<ColType>0</ColType>
 			<X>0</X>
 			<Y>0</Y>
@@ -57,7 +57,7 @@
 		<!-- I'mma snaaaaake -->
 		<Object type="SnakeObject">
 		    <Name>SnakeHead</Name>
-            <Sprite>content/snake_head.png</Sprite>
+            <Sprite>SNAKE_HEAD</Sprite>
 			<ColType>1</ColType>
 			<X>192</X>
 			<Y>192</Y>

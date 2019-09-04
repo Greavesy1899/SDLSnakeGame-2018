@@ -20,14 +20,6 @@ void FoodControllerObject::Init(const std::string& name)
 {
 	this->pickupAppleSound = Singleton::getInstance()->GetAM()->LookupAudioClip("AUD_APPLE_PICKUP");
 	this->pickupPowerupSound = Singleton::getInstance()->GetAM()->LookupAudioClip("AUD_POWER_PICKUP");
-	std::string foodPath = "content/apple_sprite.png";
-	std::string ghostPath = "content/power_ghost.png";
-
-	auto* foodData = new SpriteData(foodPath);
-	auto* ghostData = new SpriteData(ghostPath);
-
-	Singleton::getInstance()->GetSpriteManager()->PushBack(foodData);
-	Singleton::getInstance()->GetSpriteManager()->PushBack(ghostData);
 	srand(time(NULL));
 	this->name = name;
 	SpawnFood();
@@ -53,9 +45,9 @@ void FoodControllerObject::SpawnFood()
 	SpriteData* obj = nullptr;
 
 	if(curType == 0)
-		obj = Singleton::getInstance()->GetSpriteManager()->GetSpriteByName("content/apple_sprite.png");
+		obj = Singleton::getInstance()->GetSpriteManager()->GetSpriteByName("FOOD_APPLE");
 	else
-		obj = Singleton::getInstance()->GetSpriteManager()->GetSpriteByName("content/power_ghost.png");
+		obj = Singleton::getInstance()->GetSpriteManager()->GetSpriteByName("FOOD_POWERUP");
 
 	int randX = 0, randY = 0;
 

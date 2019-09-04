@@ -21,15 +21,17 @@ SDL_Point* SpriteData::GetCentrePoint() const
 	return this->centrePoint;
 }
 
-int SpriteData::InitialiseData(std::string& path)
+int SpriteData::InitialiseData(std::string path, std::string name)
 {
-	this->name = path;
+	this->name = name;
 	this->surface = IMG_Load(path.c_str());
+
+	if (this->surface == nullptr)
+	{
+		SDL_LogCritical(SDL_LOG_CATEGORY_RENDER, "Failed to load %s", path.c_str());
+	}
+
 	this->centrePoint = new SDL_Point{ surface->w / 2, surface->h / 2 };
-
-	if (!surface)
-		return -1;
-
 	return 0;
 }
 
@@ -54,10 +56,10 @@ SpriteData::SpriteData()
 	texture = nullptr;
 }
 
-SpriteData::SpriteData(std::string& path)
-{
-	this->InitialiseData(path);
-}
+//SpriteData::SpriteData(std::string& path)
+//{
+//	this->InitialiseData(path);
+//}
 
 SpriteData::~SpriteData()
 {

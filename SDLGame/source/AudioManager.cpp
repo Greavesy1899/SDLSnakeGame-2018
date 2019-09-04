@@ -69,7 +69,8 @@ AudioManager::~AudioManager()
 	for (int i = 0; i != this->clips.size(); i++)
 		delete this->clips[i];
 
-	this->clips = std::vector<AudioClip*>();
+	this->clips.clear();
+	this->clips.shrink_to_fit();
 }
 
 void AudioManager::ParseAudioFile()

@@ -1,4 +1,33 @@
 #include "headers/SpriteCollectionManager.h"
+#include "../include/tinyxml2.h"
+
+void SpriteCollectionManager::ParseSpriteXML()
+{
+	std::string spriteFile = "Content/sprites.xml";
+
+	SDL_LogCritical(SDL_LOG_CATEGORY_SYSTEM, "Reading Sprites XML: %s", spriteFile.c_str());
+
+	tinyxml2::XMLDocument doc;
+	doc.LoadFile(spriteFile.c_str());
+
+	if (doc.Error())
+	{
+		SDL_LogCritical(SDL_LOG_CATEGORY_ERROR, "XML Reading error on [%s]. %s\n", spriteFile.c_str(), doc.ErrorStr());
+	}
+
+	tinyxml2::XMLElement* node = doc.RootElement();
+
+	//get object data.
+	tinyxml2::XMLElement* objectsNode = node->FirstChildElement("Sprites");
+	for (const tinyxml2::XMLElement* child = objectsNode->FirstChildElement(); child != nullptr; child = child->NextSiblingElement())
+	{
+		SpriteData* data = new SpriteData();
+		const char* name = child->Attribute("name");
+		const char* path = child->GetText();
+		data->InitialiseData(path, name);
+		this->PushBack(data);
+	}
+}
 
 int SpriteCollectionManager::CheckSpriteDataExistence(const std::string& name)
 {
@@ -56,8 +85,9 @@ void SpriteCollectionManager::PushBack(SpriteData* data)
 
 SpriteCollectionManager::SpriteCollectionManager()
 {
-	SDL_Log("Created sprite manager");
+	SDL_LogCritical(SDL_LOG_CATEGORY_RENDER, "Created Sprite Manager");
 	spriteData = std::vector<SpriteData*>();
+	this->ParseSpriteXML();
 }
 
 SpriteCollectionManager::~SpriteCollectionManager()

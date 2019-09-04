@@ -1,0 +1,21 @@
+<SpriteManager version="1">
+    <Sprites>
+        <Sprite name="SNAKE_HEAD">Content/Sprites/snake_head.png</Sprite>
+		<Sprite name="SNAKE_TAIL">Content/Sprites/snake_tail.png</Sprite>
+		<Sprite name="SNAKE_BODY">Content/Sprites/snake_body.png</Sprite>
+		<Sprite name="POWER_HEAD">Content/Sprites/snake_head.png</Sprite>
+		<Sprite name="POWER_TAIL">Content/Sprites/snake_tail.png</Sprite>
+		<Sprite name="POWER_BODY">Content/Sprites/snake_body.png</Sprite>
+		<Sprite name="FOOD_POWERUP">Content/Sprites/power_ghost.png</Sprite>
+		<Sprite name="FOOD_APPLE">Content/Sprites/apple_sprite.png</Sprite>
+		<Sprite name="LEVEL1_BACKGROUND">Content/Sprites/background.png</Sprite>
+		<Sprite name="GRASS_GEN0">Content/Sprites/grass_0.png</Sprite>
+		<Sprite name="GRASS_GEN1">Content/Sprites/grass_1.png</Sprite>
+		<Sprite name="GRASS_GEN2">Content/Sprites/grass_2.png</Sprite>
+		<Sprite name="GRASS_GEN3">Content/Sprites/grass_3.png</Sprite>
+		<Sprite name="GRASS_GEN4">Content/Sprites/grass_4.png</Sprite>
+		<Sprite name="GRASS_GEN5">Content/Sprites/grass_5.png</Sprite>
+		<Sprite name="GRASS_GEN6">Content/Sprites/grass_6.png</Sprite>
+		<Sprite name="GRASS_GEN7">Content/Sprites/grass_7.png</Sprite>
+    </Sprites>
+</SpriteManager>

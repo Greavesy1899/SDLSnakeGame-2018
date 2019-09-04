@@ -6,6 +6,7 @@
 class SpriteCollectionManager {
 private:
 	std::vector<SpriteData*> spriteData;
+	void ParseSpriteXML();
 public:
 	int CheckSpriteDataExistence(const std::string& name);
 	SpriteData* GetSpriteByName(const std::string& name);
