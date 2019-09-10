@@ -22,12 +22,12 @@ SnakeObject::~SnakeObject() = default;
 void SnakeObject::Init(const std::string& name, SpriteData* spriteData, int colType, int x, int y)
 {
 	GameObject::Init(name, spriteData, colType, x, y);
-	this->headSprite = Singleton::getInstance()->GetSpriteManager()->GetSpriteByName("SNAKE_HEAD");
-	this->bodySprite = Singleton::getInstance()->GetSpriteManager()->GetSpriteByName("SNAKE_BODY");
-	this->tailSprite = Singleton::getInstance()->GetSpriteManager()->GetSpriteByName("SNAKE_TAIL");
-	this->ghostHeadSprite = Singleton::getInstance()->GetSpriteManager()->GetSpriteByName("POWER_HEAD");
-	this->ghostBodySprite = Singleton::getInstance()->GetSpriteManager()->GetSpriteByName("POWER_BODY");
-	this->ghostTailSprite = Singleton::getInstance()->GetSpriteManager()->GetSpriteByName("POWER_TAIL");
+	this->headSprite = Singleton::getInstance()->GetSM()->GetSpriteByName("SNAKE_HEAD");
+	this->bodySprite = Singleton::getInstance()->GetSM()->GetSpriteByName("SNAKE_BODY");
+	this->tailSprite = Singleton::getInstance()->GetSM()->GetSpriteByName("SNAKE_TAIL");
+	this->ghostHeadSprite = Singleton::getInstance()->GetSM()->GetSpriteByName("POWER_HEAD");
+	this->ghostBodySprite = Singleton::getInstance()->GetSM()->GetSpriteByName("POWER_BODY");
+	this->ghostTailSprite = Singleton::getInstance()->GetSM()->GetSpriteByName("POWER_TAIL");
 
 	auto* headPart = new GameObject();
 	headPart->Init("SnakeHead", headSprite, colType, x, y);
@@ -147,20 +147,20 @@ void SnakeObject::Update()
 	{
 		if (snakeMode == 1)
 		{
-			if (strcmp(body[z]->GetSpriteData()->GetName().c_str(), "content/snake_head.png") == 0)
+			if (strcmp(body[z]->GetSpriteData()->GetName().c_str(), "SNAKE_HEAD") == 0)
 				body[z]->SetSpriteData(ghostHeadSprite);
-			else if (strcmp(body[z]->GetSpriteData()->GetName().c_str(), "content/snake_tail.png") == 0)
+			else if (strcmp(body[z]->GetSpriteData()->GetName().c_str(), "SNAKE_TAIL") == 0)
 				body[z]->SetSpriteData(ghostTailSprite);
-			else if (strcmp(body[z]->GetSpriteData()->GetName().c_str(), "content/snake_body.png") == 0)
+			else if (strcmp(body[z]->GetSpriteData()->GetName().c_str(), "SNAKE_BODY") == 0)
 				body[z]->SetSpriteData(ghostBodySprite);
 		}
 		else if(snakeMode == 0)
 		{
-			if (strcmp(body[z]->GetSpriteData()->GetName().c_str(), "content/blue_snake_head.png") == 0)
+			if (strcmp(body[z]->GetSpriteData()->GetName().c_str(), "POWER_HEAD") == 0)
 				body[z]->SetSpriteData(headSprite);
-			else if (strcmp(body[z]->GetSpriteData()->GetName().c_str(), "content/blue_snake_tail.png") == 0)
+			else if (strcmp(body[z]->GetSpriteData()->GetName().c_str(), "POWER_TAIL") == 0)
 				body[z]->SetSpriteData(tailSprite);
-			else if (strcmp(body[z]->GetSpriteData()->GetName().c_str(), "content/blue_snake_body.png") == 0)
+			else if (strcmp(body[z]->GetSpriteData()->GetName().c_str(), "POWER_BODY") == 0)
 				body[z]->SetSpriteData(bodySprite);
 		}
 

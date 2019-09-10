@@ -31,7 +31,7 @@ public:
 	void SetFPS(int val);
 	bool GetHasEatenGhostFood() const;
 	void SetHasEatenGhostFood(bool val);
-	SpriteCollectionManager* GetSpriteManager() const;
+	SpriteCollectionManager* GetSM() const;
 	InputManager* GetIM() const;
 	AudioManager* GetAM() const;
 

@@ -74,7 +74,7 @@ int Scene::ReadSceneXML(const std::string& path)
 			auto* obj = new GameObject();
 			//do variables for GameObject
 			spritePath = child->FirstChildElement("Sprite")->GetText();
-			data = Singleton::getInstance()->GetSpriteManager()->GetSpriteByName(spritePath);
+			data = Singleton::getInstance()->GetSM()->GetSpriteByName(spritePath);
 			colType = atoi(child->FirstChildElement("ColType")->GetText());
 			x = atoi(child->FirstChildElement("X")->GetText());
 			y = atoi(child->FirstChildElement("Y")->GetText());
@@ -99,7 +99,7 @@ int Scene::ReadSceneXML(const std::string& path)
 			auto* obj = new SnakeObject();
 			//do variables for SnakeObject
 			spritePath = child->FirstChildElement("Sprite")->GetText();
-			data = Singleton::getInstance()->GetSpriteManager()->GetSpriteByName(spritePath);
+			data = Singleton::getInstance()->GetSM()->GetSpriteByName(spritePath);
 			colType = atoi(child->FirstChildElement("ColType")->GetText());
 			x = atoi(child->FirstChildElement("X")->GetText());
 			y = atoi(child->FirstChildElement("Y")->GetText());
@@ -283,7 +283,7 @@ void Scene::generateBackground(int minX, int maxX, int minY, int maxY)
 				int randGrass = rand() % 7;
 				std::string path = "GRASS_GEN" + std::to_string(randGrass);
 				auto* grass = new GameObject();
-				grass->Init("Grass" + std::to_string(cellSizeX) + std::to_string(cellSizeY), Singleton::getInstance()->GetSpriteManager()->GetSpriteByName(path), 0, (x*32)+32, (y * 32) + 64);
+				grass->Init("Grass" + std::to_string(cellSizeX) + std::to_string(cellSizeY), Singleton::getInstance()->GetSM()->GetSpriteByName(path), 0, (x*32)+32, (y * 32) + 64);
 				this->objects.push_back(grass);
 			}
 		}

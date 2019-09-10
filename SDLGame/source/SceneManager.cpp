@@ -55,7 +55,7 @@ void SceneManager::Update()
 
 void SceneManager::Render() const
 {
-	Singleton::getInstance()->GetSpriteManager()->CreateTextures(renderer);
+	Singleton::getInstance()->GetSM()->CreateTextures(renderer);
 	SDL_RenderClear(renderer);
 	currentScene->Render(renderer);
 	SDL_RenderPresent(renderer);

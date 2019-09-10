@@ -45,9 +45,9 @@ void FoodControllerObject::SpawnFood()
 	SpriteData* obj = nullptr;
 
 	if(curType == 0)
-		obj = Singleton::getInstance()->GetSpriteManager()->GetSpriteByName("FOOD_APPLE");
+		obj = Singleton::getInstance()->GetSM()->GetSpriteByName("FOOD_APPLE");
 	else
-		obj = Singleton::getInstance()->GetSpriteManager()->GetSpriteByName("FOOD_POWERUP");
+		obj = Singleton::getInstance()->GetSM()->GetSpriteByName("FOOD_POWERUP");
 
 	int randX = 0, randY = 0;
 

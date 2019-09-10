@@ -153,9 +153,21 @@ void GameManager::Input() {
 		case SDL_QUIT:
 			isRunning = false;
 			break;
-		case SDL_WINDOWEVENT_RESIZED:
-			//SDL_LogCritical(SDL_LOG_CATEGORY_RENDER, "Resizing window to %i, %i", event.window.data1, event.window.data2);
-			SDL_SetWindowSize(window, event.window.data1, event.window.data2);
+		case SDL_WINDOWEVENT:
+			if (event.window.event == SDL_WINDOWEVENT_RESIZED)
+			{
+				SDL_LogCritical(SDL_LOG_CATEGORY_RENDER, "Resizing window to %i, %i", event.window.data1, event.window.data2);
+
+				SDL_Rect rect;
+				rect.x = 0;
+				rect.y = 0;
+				rect.h = event.window.data1;
+				rect.w = event.window.data2;
+				SDL_RenderSetViewport(this->sceneManager->GetRenderer(), &rect);
+				SDL_RenderSetLogicalSize(this->sceneManager->GetRenderer(), event.window.data1, event.window.data2);
+
+				
+			}
 			break;
 		case SDL_MOUSEMOTION:
 			pos = Vector(event.motion.x, event.motion.y);

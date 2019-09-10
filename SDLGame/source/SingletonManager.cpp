@@ -64,7 +64,7 @@ void Singleton::SetHasEatenGhostFood(bool val)
 	this->eatenGhost = val;
 }
 
-SpriteCollectionManager * Singleton::GetSpriteManager() const
+SpriteCollectionManager * Singleton::GetSM() const
 {
 	return this->spriteManager;
 }

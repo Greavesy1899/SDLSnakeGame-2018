@@ -3,9 +3,9 @@
         <Sprite name="SNAKE_HEAD">Content/Sprites/snake_head.png</Sprite>
 		<Sprite name="SNAKE_TAIL">Content/Sprites/snake_tail.png</Sprite>
 		<Sprite name="SNAKE_BODY">Content/Sprites/snake_body.png</Sprite>
-		<Sprite name="POWER_HEAD">Content/Sprites/snake_head.png</Sprite>
-		<Sprite name="POWER_TAIL">Content/Sprites/snake_tail.png</Sprite>
-		<Sprite name="POWER_BODY">Content/Sprites/snake_body.png</Sprite>
+		<Sprite name="POWER_HEAD">Content/Sprites/blue_snake_head.png</Sprite>
+		<Sprite name="POWER_TAIL">Content/Sprites/blue_snake_tail.png</Sprite>
+		<Sprite name="POWER_BODY">Content/Sprites/blue_snake_body.png</Sprite>
 		<Sprite name="FOOD_POWERUP">Content/Sprites/power_ghost.png</Sprite>
 		<Sprite name="FOOD_APPLE">Content/Sprites/apple_sprite.png</Sprite>
 		<Sprite name="LEVEL1_BACKGROUND">Content/Sprites/background.png</Sprite>
